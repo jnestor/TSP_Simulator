@@ -7,12 +7,22 @@ package tsp_simulator;
 
 /**
  * VPEArray - Simulates full 2D array of VPEs
- * essentiall a large 2D array
  * @author nestorj
  */
 public class VPEArray {
     
-    public VPE getVPE(int x_pos, int y_pos) {
-        return null;
+    public VPE getVPE(int xPos, int yPos) {
+        return null; // placeholder
     }
+    
+    public int getWidth() {
+      return vpaWidth;
+    }
+    
+    public int getHeight() {
+        return vpaHeight;
+    }
+    
+    private int vpaWidth;
+    private int vpaHeight;
 }

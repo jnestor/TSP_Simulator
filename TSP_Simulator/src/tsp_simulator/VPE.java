@@ -14,6 +14,45 @@ public class VPE {
         return false;
     }
     
-    private int x_pos;
-    private int y_pos;
+    public boolean onLeftEdge() {
+        return xPos == 0;
+    }
+    
+    public boolean onRightEdge() {
+        return xPos == (vpa.getWidth() - 1);
+    }
+    
+    public boolean onTopEdge() {
+        return yPos == 0;
+    }
+    
+    public boolean onBottomEdge() {
+        return yPos == (vpa.getHeight() - 1);
+    }
+    
+    public int getStatus() {
+        return -1; // placeholder
+    }
+    
+    public VPE getWestNeighbor() {
+        if (onLeftEdge()) return null;
+        else return vpa.getVPE(xPos-1, yPos);
+    }
+    
+    public VPE getNorthNeighbor() {
+        if (onTopEdge()) return null;
+        else return vpa.getVPE(xPos, yPos-1);
+    }
+    
+    public VPE getEastNeighbor() {
+        return null; // placeholder
+    }
+    
+    public VPE getSouthNeighbor() {
+        return null; // placeholder
+    }
+    
+    private VPEArray vpa;
+    private int xPos;
+    private int yPos;
 }
