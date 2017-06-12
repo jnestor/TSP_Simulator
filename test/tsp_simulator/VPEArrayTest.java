@@ -45,12 +45,11 @@ public class VPEArrayTest {
         System.out.println("getVPE");
         int xPos = 0;
         int yPos = 0;
-        VPEArray instance = null;
+        VPEArray instance = new VPEArray(5,10);
         VPE expResult = null;
         VPE result = instance.getVPE(xPos, yPos);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -59,12 +58,11 @@ public class VPEArrayTest {
     @Test
     public void testGetWidth() {
         System.out.println("getWidth");
-        VPEArray instance = null;
-        int expResult = 0;
+        VPEArray instance = new VPEArray(5,10);
+        int expResult = 5;
         int result = instance.getWidth();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -73,12 +71,11 @@ public class VPEArrayTest {
     @Test
     public void testGetHeight() {
         System.out.println("getHeight");
-        VPEArray instance = null;
-        int expResult = 0;
+        VPEArray instance = new VPEArray(5,10);
+        int expResult = 10;
         int result = instance.getHeight();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
     
 }
