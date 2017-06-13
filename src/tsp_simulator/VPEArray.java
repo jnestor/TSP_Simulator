@@ -20,7 +20,7 @@ public class VPEArray {
     
     //retrieve VPE from VPE array according to position
     public VPE getVPE(int xPos, int yPos) {
-        if (yPos<vpaHeight && xPos< vpaWidth){
+        if (yPos >= 0 && yPos <vpaHeight && xPos >= 0 && xPos< vpaWidth){
             VPE vpe_target = vpeArr[yPos][xPos]; 
             return vpe_target; 
         }

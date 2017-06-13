@@ -17,6 +17,5 @@ public class TSP_Simulator {
     public static void main(String[] args) {
 
         
-      
     }
 }
