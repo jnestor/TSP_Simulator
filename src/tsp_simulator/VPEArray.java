@@ -27,6 +27,10 @@ public class VPEArray {
         }
     }
     
+    public void insertVPE(VPE vpe){
+        vpeArr[vpe.getY()][vpe.getX()] = vpe;
+    }
+    
     public int getWidth() {
       return vpaWidth;
     }

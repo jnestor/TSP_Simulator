@@ -69,7 +69,7 @@ public class VPETest {
      */
     @Test
     public void testOnLeftEdge2() {
-        System.out.println("onLeftEdge");
+        System.out.println("onLeftEdge2");
         VPEArray vpea = new VPEArray(5,10);
         VPE instance = new VPE(vpea,1,4);
         boolean expResult = false;
@@ -97,7 +97,7 @@ public class VPETest {
      */
     @Test
     public void testOnRightEdge2() {
-        System.out.println("onRightEdge");
+        System.out.println("onRightEdge2");
         VPEArray vpea = new VPEArray(5,10);
         VPE instance = new VPE(vpea,3,4);
         boolean expResult = false;
@@ -125,7 +125,7 @@ public class VPETest {
      */
     @Test
     public void testOnTopEdge2() {
-        System.out.println("onTopEdge");
+        System.out.println("onTopEdge2");
         VPEArray vpea = new VPEArray(5,10);
         VPE instance = new VPE(vpea,3,2);
         boolean expResult = false;
@@ -153,7 +153,7 @@ public class VPETest {
      */
     @Test
     public void testOnBottomEdge2() {
-        System.out.println("onBottomEdge");
+        System.out.println("onBottomEdge2");
         VPEArray vpea = new VPEArray(5,10);
         VPE instance = new VPE(vpea,3,7);
         boolean expResult = false;
@@ -161,6 +161,176 @@ public class VPETest {
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
     }
+    
+    
+    /**
+     * Test of onLeftEdge method, of class VPE.
+     */
+    @Test
+    public void testOnLeftEdge3() {
+        System.out.println("onLeftEdge3");
+        VPEArray vpea = new VPEArray(5,10);
+        VPE[][] temp = new VPE[10][5];
+        for(int j=0; j < 10; j++){
+           for(int i = 0; i < 5; i++){
+               temp[j][i]=new VPE(vpea,i,j);
+               vpea.insertVPE(temp[j][i]);
+           }
+        }
+        VPE instance = vpea.getVPE(0,4);
+        boolean expResult = true;
+        boolean result = instance.onLeftEdge();
+        assertEquals(expResult, result);
+        // TODO review the generated test code and remove the default call to fail.
+    }
+    
+    /**
+     * Test of onLeftEdge method, of class VPE.
+     */
+    @Test
+    public void testOnLeftEdge4() {
+        System.out.println("onLeftEdge4");
+        VPEArray vpea = new VPEArray(5,10);
+        VPE[][] temp = new VPE[10][5];
+        for(int j=0; j < 10; j++){
+           for(int i = 0; i < 5; i++){
+               temp[j][i]=new VPE(vpea,i,j);
+               vpea.insertVPE(temp[j][i]);
+           }
+        }
+        VPE instance = vpea.getVPE(1,4);
+        boolean expResult = false;
+        boolean result = instance.onLeftEdge();
+        assertEquals(expResult, result);
+        // TODO review the generated test code and remove the default call to fail.
+    }
+
+    /**
+     * Test of onRightEdge method, of class VPE.
+     */
+    @Test
+    public void testOnRightEdge3() {
+        System.out.println("onRightEdge3");
+        VPEArray vpea = new VPEArray(5,10);
+        VPE[][] temp = new VPE[10][5];
+        for(int j=0; j < 10; j++){
+           for(int i = 0; i < 5; i++){
+               temp[j][i]=new VPE(vpea,i,j);
+               vpea.insertVPE(temp[j][i]);
+           }
+        }
+        VPE instance = vpea.getVPE(4,4);
+        boolean expResult = true;
+        boolean result = instance.onRightEdge();
+        assertEquals(expResult, result);
+        // TODO review the generated test code and remove the default call to fail.
+    }
+
+     /**
+     * Test of onRightEdge method, of class VPE.
+     */
+    @Test
+    public void testOnRightEdge4() {
+        System.out.println("onRightEdge4");
+        VPEArray vpea = new VPEArray(5,10);
+        VPE[][] temp = new VPE[10][5];
+        for(int j=0; j < 10; j++){
+           for(int i = 0; i < 5; i++){
+               temp[j][i]=new VPE(vpea,i,j);
+               vpea.insertVPE(temp[j][i]);
+           }
+        }
+        VPE instance = vpea.getVPE(3,4);
+        boolean expResult = false;
+        boolean result = instance.onRightEdge();
+        assertEquals(expResult, result);
+        // TODO review the generated test code and remove the default call to fail.
+    }
+    
+    /**
+     * Test of onTopEdge method, of class VPE.
+     */
+    @Test
+    public void testOnTopEdge3() {
+        System.out.println("onTopEdge3");
+        VPEArray vpea = new VPEArray(5,10);
+        VPE[][] temp = new VPE[10][5];
+        for(int j=0; j < 10; j++){
+           for(int i = 0; i < 5; i++){
+               temp[j][i]=new VPE(vpea,i,j);
+               vpea.insertVPE(temp[j][i]);
+           }
+        }
+        VPE instance = vpea.getVPE(3,0);
+        boolean expResult = true;
+        boolean result = instance.onTopEdge();
+        assertEquals(expResult, result);
+        // TODO review the generated test code and remove the default call to fail.
+    }
+    
+      /**
+     * Test of onTopEdge method, of class VPE.
+     */
+    @Test
+    public void testOnTopEdge4() {
+        System.out.println("onTopEdge4");
+        VPEArray vpea = new VPEArray(5,10);
+        VPE[][] temp = new VPE[10][5];
+        for(int j=0; j < 10; j++){
+           for(int i = 0; i < 5; i++){
+               temp[j][i]=new VPE(vpea,i,j);
+               vpea.insertVPE(temp[j][i]);
+           }
+        }
+        VPE instance = vpea.getVPE(3,2);
+        boolean expResult = false;
+        boolean result = instance.onTopEdge();
+        assertEquals(expResult, result);
+        // TODO review the generated test code and remove the default call to fail.
+    }
+
+    /**
+     * Test of onBottomEdge method, of class VPE.
+     */
+    @Test
+    public void testOnBottomEdge3() {
+        System.out.println("onBottomEdge");
+        VPEArray vpea = new VPEArray(5,10);
+        VPE[][] temp = new VPE[10][5];
+        for(int j=0; j < 10; j++){
+           for(int i = 0; i < 5; i++){
+               temp[j][i]=new VPE(vpea,i,j);
+               vpea.insertVPE(temp[j][i]);
+           }
+        }
+        VPE instance = vpea.getVPE(3,9);
+        boolean expResult = true;
+        boolean result = instance.onBottomEdge();
+        assertEquals(expResult, result);
+        // TODO review the generated test code and remove the default call to fail.
+    }
+
+    /**
+     * Test of onBottomEdge method, of class VPE.
+     */
+    @Test
+    public void testOnBottomEdge4() {
+        System.out.println("onBottomEdge4");
+        VPEArray vpea = new VPEArray(5,10);
+        VPE[][] temp = new VPE[10][5];
+        for(int j=0; j < 10; j++){
+           for(int i = 0; i < 5; i++){
+               temp[j][i]=new VPE(vpea,i,j);
+               vpea.insertVPE(temp[j][i]);
+           }
+        }
+        VPE instance = vpea.getVPE(3,7);
+        boolean expResult = false;
+        boolean result = instance.onBottomEdge();
+        assertEquals(expResult, result);
+        // TODO review the generated test code and remove the default call to fail.
+    }
+    
     
     /**
      * Test of getStatus method, of class VPE.
@@ -181,8 +351,16 @@ public class VPETest {
     public void testGetWestNeighbor() {
         System.out.println("getWestNeighbor");
         VPEArray vpea = new VPEArray(5,10);
-        VPE instance = new VPE(vpea,3,7);
+        VPE[][] temp = new VPE[10][5];
+        for(int j=0; j < 10; j++){
+           for(int i = 0; i < 5; i++){
+               temp[j][i]=new VPE(vpea,i,j);
+               vpea.insertVPE(temp[j][i]);
+           }
+        }
+        VPE instance =  vpea.getVPE(3,7);
         VPE expResult = vpea.getVPE(2,7);
+        System.out.println("instance"+instance);
         VPE result = instance.getWestNeighbor();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
@@ -193,9 +371,16 @@ public class VPETest {
      */
     @Test
     public void testGetWestNeighbor2() {
-        System.out.println("getWestNeighbor");
+        System.out.println("getWestNeighbor2");
         VPEArray vpea = new VPEArray(5,10);
-        VPE instance = new VPE(vpea,0,7);
+        VPE[][] temp = new VPE[10][5];
+        for(int j=0; j < 10; j++){
+           for(int i = 0; i < 5; i++){
+               temp[j][i]=new VPE(vpea,i,j);
+               vpea.insertVPE(temp[j][i]);
+           }
+        }
+        VPE instance =  vpea.getVPE(0,7);
         VPE expResult = null;
         VPE result = instance.getWestNeighbor();
         assertEquals(expResult, result);
@@ -209,8 +394,15 @@ public class VPETest {
     public void testGetNorthNeighbor() {
         System.out.println("getNorthNeighbor");
         VPEArray vpea = new VPEArray(5,10);
-        VPE instance = new VPE(vpea,2,5);
-        VPE expResult = vpea.getVPE(2,4);
+        VPE[][] temp = new VPE[10][5];
+        for(int j=0; j < 10; j++){
+           for(int i = 0; i < 5; i++){
+               temp[j][i]=new VPE(vpea,i,j);
+               vpea.insertVPE(temp[j][i]);
+           }
+        }
+        VPE instance =  vpea.getVPE(2,7);
+        VPE expResult = vpea.getVPE(2,6);
         VPE result = instance.getNorthNeighbor();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
@@ -221,9 +413,16 @@ public class VPETest {
      */
     @Test
     public void testGetNorthNeighbor2() {
-        System.out.println("getNorthNeighbor");
+        System.out.println("getNorthNeighbor2");
         VPEArray vpea = new VPEArray(5,10);
-        VPE instance = new VPE(vpea,4,0);
+        VPE[][] temp = new VPE[10][5];
+        for(int j=0; j < 10; j++){
+           for(int i = 0; i < 5; i++){
+               temp[j][i]=new VPE(vpea,i,j);
+               vpea.insertVPE(temp[j][i]);
+           }
+        }
+        VPE instance = vpea.getVPE(4,0);
         VPE expResult = null;
         VPE result = instance.getNorthNeighbor();
         assertEquals(expResult, result);
@@ -237,7 +436,14 @@ public class VPETest {
     public void testGetEastNeighbor() {
         System.out.println("getEastNeighbor");
         VPEArray vpea = new VPEArray(5,10);
-        VPE instance = new VPE(vpea,2,5);
+        VPE[][] temp = new VPE[10][5];
+        for(int j=0; j < 10; j++){
+           for(int i = 0; i < 5; i++){
+               temp[j][i]=new VPE(vpea,i,j);
+               vpea.insertVPE(temp[j][i]);
+           }
+        }
+        VPE instance = vpea.getVPE(2,5);
         VPE expResult = vpea.getVPE(3,5);
         VPE result = instance.getEastNeighbor();
         assertEquals(expResult, result);
@@ -249,9 +455,16 @@ public class VPETest {
      */
     @Test
     public void testGetEastNeighbor2() {
-        System.out.println("getEastNeighbor");
+        System.out.println("getEastNeighbor2");
         VPEArray vpea = new VPEArray(5,10);
-        VPE instance = new VPE(vpea,4,5);
+        VPE[][] temp = new VPE[10][5];
+        for(int j=0; j < 10; j++){
+           for(int i = 0; i < 5; i++){
+               temp[j][i]=new VPE(vpea,i,j);
+               vpea.insertVPE(temp[j][i]);
+           }
+        }
+        VPE instance = vpea.getVPE(4,5);
         VPE expResult = null;
         VPE result = instance.getEastNeighbor();
         assertEquals(expResult, result);
@@ -265,7 +478,14 @@ public class VPETest {
     public void testGetSouthNeighbor() {
         System.out.println("getSouthNeighbor");
         VPEArray vpea = new VPEArray(5,10);
-        VPE instance = new VPE(vpea,2,5);
+        VPE[][] temp = new VPE[10][5];
+        for(int j=0; j < 10; j++){
+           for(int i = 0; i < 5; i++){
+               temp[j][i]=new VPE(vpea,i,j);
+               vpea.insertVPE(temp[j][i]);
+           }
+        }
+        VPE instance = vpea.getVPE(2,5);
         VPE expResult = vpea.getVPE(2,6);
         VPE result = instance.getSouthNeighbor();
         assertEquals(expResult, result);
@@ -276,8 +496,15 @@ public class VPETest {
      */
     @Test
     public void testGetSouthNeighbor2() {
-        System.out.println("getSouthNeighbor");
+        System.out.println("getSouthNeighbor2");
         VPEArray vpea = new VPEArray(5,10);
+        VPE[][] temp = new VPE[10][5];
+        for(int j=0; j < 10; j++){
+           for(int i = 0; i < 5; i++){
+               temp[j][i]=new VPE(vpea,i,j);
+               vpea.insertVPE(temp[j][i]);
+           }
+        }
         VPE instance = new VPE(vpea,1,9);
         VPE expResult = null;
         VPE result = instance.getSouthNeighbor();

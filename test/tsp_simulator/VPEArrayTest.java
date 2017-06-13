@@ -43,9 +43,38 @@ public class VPEArrayTest {
     @Test
     public void testGetVPE() {
         System.out.println("getVPE");
-        int xPos = 0;
-        int yPos = 0;
+        int xPos = 4;
+        int yPos = 1;
         VPEArray instance = new VPEArray(5,10);
+        VPE temp = new VPE(instance,4,1);
+        for(int j=0; j < 10; j++){
+           for(int i = 0; i < 5; i++){
+               instance.insertVPE(new VPE(instance,i,j));
+               if(j==1 && i==4){
+                   instance.insertVPE(temp);
+               }
+           }
+        }
+        VPE expResult = temp;
+        VPE result = instance.getVPE(xPos, yPos);
+        assertEquals(expResult, result);
+        // TODO review the generated test code and remove the default call to fail.
+    }
+
+     /**
+     * Test of getVPE method, of class VPEArray.
+     */
+    @Test
+    public void testGetVPE2() {
+        System.out.println("getVPE2");
+        int xPos = 10;
+        int yPos = 15;
+        VPEArray instance = new VPEArray(5,10);
+        for(int j=0; j < 10; j++){
+           for(int i = 0; i < 5; i++){
+               instance.insertVPE(new VPE(instance,i,j));
+           }
+        }
         VPE expResult = null;
         VPE result = instance.getVPE(xPos, yPos);
         assertEquals(expResult, result);
@@ -57,9 +86,22 @@ public class VPEArrayTest {
      */
     @Test
     public void testGetWidth() {
-        System.out.println("getWidth");
+        System.out.println("getWidth1");
         VPEArray instance = new VPEArray(5,10);
         int expResult = 5;
+        int result = instance.getWidth();
+        assertEquals(expResult, result);
+        // TODO review the generated test code and remove the default call to fail.
+    }
+    
+     /**
+     * Test of getWidth method, of class VPEArray.
+     */
+    @Test
+    public void testGetWidth2() {
+        System.out.println("getWidth2");
+        VPEArray instance = new VPEArray(0,10);
+        int expResult = 0;
         int result = instance.getWidth();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
@@ -70,9 +112,22 @@ public class VPEArrayTest {
      */
     @Test
     public void testGetHeight() {
-        System.out.println("getHeight");
+        System.out.println("getHeight1");
         VPEArray instance = new VPEArray(5,10);
         int expResult = 10;
+        int result = instance.getHeight();
+        assertEquals(expResult, result);
+        // TODO review the generated test code and remove the default call to fail.
+    }
+    
+    /**
+     * Test of getHeight method, of class VPEArray.
+     */
+    @Test
+    public void testGetHeight2() {
+        System.out.println("getHeight2");
+        VPEArray instance = new VPEArray(5,0);
+        int expResult = 0;
         int result = instance.getHeight();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.

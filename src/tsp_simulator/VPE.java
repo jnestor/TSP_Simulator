@@ -19,6 +19,14 @@ public class VPE {
         xPos = x;
         yPos = y;
     }
+    public int getX(){
+        return xPos;
+    }
+    
+    public int getY(){
+        return yPos;
+    }
+    
     public boolean update() {
         return false;
     }
@@ -44,7 +52,7 @@ public class VPE {
     }
     
     public VPE getWestNeighbor() {
-        if (onLeftEdge()) return null;
+        if (onLeftEdge())return null;
         else return vpa.getVPE(xPos-1, yPos);
     }
     
