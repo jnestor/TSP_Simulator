@@ -61,7 +61,8 @@ public class VPEArrayTest {
         // TODO review the generated test code and remove the default call to fail.
     }
 
-     /**
+    
+ /**
      * Test of getVPE method, of class VPEArray.
      */
     @Test

@@ -140,6 +140,7 @@ public class VPETest {
         // TODO review the generated test code and remove the default call to fail.
     }
 
+    
     /**
      * Test of onBottomEdge method, of class VPE.
      * on the edge

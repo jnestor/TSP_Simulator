@@ -11,7 +11,8 @@ package tsp_simulator;
  */
 public class VPEArray {
     
-    //constructor with width and height
+   
+     //constructor with width and height
     public VPEArray(int width, int height){
         vpeArr = new VPE[height][width];
         vpaWidth = width;
