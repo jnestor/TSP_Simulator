@@ -11,6 +11,7 @@ package tsp_simulator;
  */
 public class VPE {
     
+    //default constructor
     public VPE(){
     }
    
