@@ -52,6 +52,7 @@ public class VPETest {
 
     /**
      * Test of onLeftEdge method, of class VPE.
+     * on the edge
      */
     @Test
     public void testOnLeftEdge() {
@@ -66,6 +67,7 @@ public class VPETest {
     
     /**
      * Test of onLeftEdge method, of class VPE.
+     * not on the edge
      */
     @Test
     public void testOnLeftEdge2() {
@@ -80,6 +82,7 @@ public class VPETest {
 
     /**
      * Test of onRightEdge method, of class VPE.
+     * on the edge
      */
     @Test
     public void testOnRightEdge() {
@@ -94,6 +97,7 @@ public class VPETest {
 
      /**
      * Test of onRightEdge method, of class VPE.
+     * not on the edge
      */
     @Test
     public void testOnRightEdge2() {
@@ -108,6 +112,7 @@ public class VPETest {
     
     /**
      * Test of onTopEdge method, of class VPE.
+     * on the edge
      */
     @Test
     public void testOnTopEdge() {
@@ -122,6 +127,7 @@ public class VPETest {
     
       /**
      * Test of onTopEdge method, of class VPE.
+     * not on the edge
      */
     @Test
     public void testOnTopEdge2() {
@@ -136,6 +142,7 @@ public class VPETest {
 
     /**
      * Test of onBottomEdge method, of class VPE.
+     * on the edge
      */
     @Test
     public void testOnBottomEdge() {
@@ -150,6 +157,7 @@ public class VPETest {
 
     /**
      * Test of onBottomEdge method, of class VPE.
+     * not on the edge
      */
     @Test
     public void testOnBottomEdge2() {
@@ -163,8 +171,11 @@ public class VPETest {
     }
     
     
+    //fill a vpe array and do edge test
+    
     /**
      * Test of onLeftEdge method, of class VPE.
+     * on the edge
      */
     @Test
     public void testOnLeftEdge3() {
@@ -186,6 +197,7 @@ public class VPETest {
     
     /**
      * Test of onLeftEdge method, of class VPE.
+     * not on the edge
      */
     @Test
     public void testOnLeftEdge4() {
@@ -207,6 +219,7 @@ public class VPETest {
 
     /**
      * Test of onRightEdge method, of class VPE.
+     * on the edge
      */
     @Test
     public void testOnRightEdge3() {
@@ -228,6 +241,7 @@ public class VPETest {
 
      /**
      * Test of onRightEdge method, of class VPE.
+     * not on the edge
      */
     @Test
     public void testOnRightEdge4() {
@@ -249,6 +263,7 @@ public class VPETest {
     
     /**
      * Test of onTopEdge method, of class VPE.
+     * on the edge
      */
     @Test
     public void testOnTopEdge3() {
@@ -270,6 +285,7 @@ public class VPETest {
     
       /**
      * Test of onTopEdge method, of class VPE.
+     * not on the edge
      */
     @Test
     public void testOnTopEdge4() {
@@ -291,6 +307,7 @@ public class VPETest {
 
     /**
      * Test of onBottomEdge method, of class VPE.
+     * on the edge
      */
     @Test
     public void testOnBottomEdge3() {
@@ -312,6 +329,7 @@ public class VPETest {
 
     /**
      * Test of onBottomEdge method, of class VPE.
+     * not on the edge
      */
     @Test
     public void testOnBottomEdge4() {
@@ -360,7 +378,6 @@ public class VPETest {
         }
         VPE instance =  vpea.getVPE(3,7);
         VPE expResult = vpea.getVPE(2,7);
-        System.out.println("instance"+instance);
         VPE result = instance.getWestNeighbor();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
@@ -368,6 +385,7 @@ public class VPETest {
     
     /**
      * Test of getWestNeighbor method, of class VPE.
+     * unable to find a west neighbor
      */
     @Test
     public void testGetWestNeighbor2() {
@@ -410,6 +428,7 @@ public class VPETest {
     
     /**
      * Test of getNorthNeighbor method, of class VPE.
+     * unable to find a north neighbor
      */
     @Test
     public void testGetNorthNeighbor2() {
@@ -452,6 +471,7 @@ public class VPETest {
 
      /**
      * Test of getEastNeighbor method, of class VPE.
+     * unable to find a east neighbor
      */
     @Test
     public void testGetEastNeighbor2() {
@@ -493,6 +513,7 @@ public class VPETest {
     }
      /**
      * Test of getSouthNeighbor method, of class VPE.
+     * unable to find a south neighbor
      */
     @Test
     public void testGetSouthNeighbor2() {

@@ -14,6 +14,7 @@ public class VPE {
     public VPE(){
     }
    
+    //constructor 
     public VPE(VPEArray vpe_Array, int x, int y){
         vpa = vpe_Array;
         xPos = x;

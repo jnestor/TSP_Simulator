@@ -11,12 +11,14 @@ package tsp_simulator;
  */
 public class VPEArray {
     
+    //constructor 
     public VPEArray(int width, int height){
         vpeArr = new VPE[height][width];
         vpaWidth = width;
         vpaHeight = height;
     }
     
+    //retrieve VPE from VPE array according to position
     public VPE getVPE(int xPos, int yPos) {
         if (yPos<vpaHeight && xPos< vpaWidth){
             VPE vpe_target = vpeArr[yPos][xPos]; 
@@ -26,7 +28,7 @@ public class VPEArray {
             return null; //placeholder
         }
     }
-    
+    //insert known VPE into VPE array
     public void insertVPE(VPE vpe){
         vpeArr[vpe.getY()][vpe.getX()] = vpe;
     }
