@@ -42,6 +42,8 @@ public class VPEArray {
         return vpaHeight;
     }
     
+
+    
     private int vpaWidth;
     private int vpaHeight;
     private  VPE[][] vpeArr;

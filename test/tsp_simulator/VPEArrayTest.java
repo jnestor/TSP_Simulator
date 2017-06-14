@@ -46,10 +46,10 @@ public class VPEArrayTest {
         int xPos = 4;
         int yPos = 1;
         VPEArray instance = new VPEArray(5,10);
-        VPE temp = new VPE(instance,4,1);
+        VPE temp = new VPE(instance,4,1,0);
         for(int j=0; j < 10; j++){
            for(int i = 0; i < 5; i++){
-               instance.insertVPE(new VPE(instance,i,j));
+               instance.insertVPE(new VPE(instance,i,j,0));
                if(j==1 && i==4){
                    instance.insertVPE(temp);
                }
@@ -73,7 +73,7 @@ public class VPEArrayTest {
         VPEArray instance = new VPEArray(5,10);
         for(int j=0; j < 10; j++){
            for(int i = 0; i < 5; i++){
-               instance.insertVPE(new VPE(instance,i,j));
+               instance.insertVPE(new VPE(instance,i,j,0));
            }
         }
         VPE expResult = null;

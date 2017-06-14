@@ -16,10 +16,12 @@ public class VPE {
     }
    
     //constructor 
-    public VPE(VPEArray vpe_Array, int x, int y){
+    public VPE(VPEArray vpe_Array, int x, int y,int num){
         vpa = vpe_Array;
         xPos = x;
         yPos = y;
+        state = num;
+        next = 0;
     }
     public int getX(){
         return xPos;
@@ -30,7 +32,11 @@ public class VPE {
     }
     
     public boolean update() {
-        return false;
+        state = next;
+        next = 0;
+        System.out.println(state +" state");
+        if(state == 1)  return true;
+        else            return false;
     }
     
     public boolean onLeftEdge() {
@@ -50,7 +56,7 @@ public class VPE {
     }
     
     public int getStatus() {
-        return -1; // placeholder
+        return state; // placeholder
     }
     
     public VPE getWestNeighbor() {
@@ -73,7 +79,41 @@ public class VPE {
         else return vpa.getVPE(xPos, yPos+1); // placeholder
     }
     
+    public VPE getNorthWestNeighbor(){
+        if (onTopEdge()||onLeftEdge()) return null;
+        else return vpa.getVPE(xPos-1, yPos-1);
+    }
+    
+    public VPE getNorthEastNeighbor(){
+        if (onTopEdge()||onRightEdge()) return null;
+        else return vpa.getVPE(xPos-1, yPos+1);
+    }
+    
+    public VPE getSouthWestNeighbor(){
+        if(onBottomEdge()||onLeftEdge()) return null;
+        else return vpa.getVPE(xPos+1, yPos-1);
+    }
+    
+    public VPE getSouthEastNeighbor(){
+        if(onBottomEdge()||onRightEdge()) return null;
+        else return vpa.getVPE(xPos+1, yPos+1);
+    }
+            
+    public void setState(int num){
+        state = num;
+    }
+    
+    public void setNext(int num){
+        next = num;
+    }
+    
+    public int getState(){
+        return state;
+    }
+    
     private VPEArray vpa;
     private int xPos;
     private int yPos;
+    private int state;
+    private int next;
 }

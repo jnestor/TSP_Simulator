@@ -58,7 +58,7 @@ public class VPETest {
     public void testOnLeftEdge() {
         System.out.println("onLeftEdge");
         VPEArray vpea = new VPEArray(5,10);
-        VPE instance = new VPE(vpea,0,4);
+        VPE instance = new VPE(vpea,0,4,0);
         boolean expResult = true;
         boolean result = instance.onLeftEdge();
         assertEquals(expResult, result);
@@ -73,7 +73,7 @@ public class VPETest {
     public void testOnLeftEdge2() {
         System.out.println("onLeftEdge2");
         VPEArray vpea = new VPEArray(5,10);
-        VPE instance = new VPE(vpea,1,4);
+        VPE instance = new VPE(vpea,1,4,0);
         boolean expResult = false;
         boolean result = instance.onLeftEdge();
         assertEquals(expResult, result);
@@ -88,7 +88,7 @@ public class VPETest {
     public void testOnRightEdge() {
         System.out.println("onRightEdge");
         VPEArray vpea = new VPEArray(5,10);
-        VPE instance = new VPE(vpea,4,4);
+        VPE instance = new VPE(vpea,4,4,0);
         boolean expResult = true;
         boolean result = instance.onRightEdge();
         assertEquals(expResult, result);
@@ -103,7 +103,7 @@ public class VPETest {
     public void testOnRightEdge2() {
         System.out.println("onRightEdge2");
         VPEArray vpea = new VPEArray(5,10);
-        VPE instance = new VPE(vpea,3,4);
+        VPE instance = new VPE(vpea,3,4,0);
         boolean expResult = false;
         boolean result = instance.onRightEdge();
         assertEquals(expResult, result);
@@ -118,7 +118,7 @@ public class VPETest {
     public void testOnTopEdge() {
         System.out.println("onTopEdge");
         VPEArray vpea = new VPEArray(5,10);
-        VPE instance = new VPE(vpea,3,0);
+        VPE instance = new VPE(vpea,3,0,0);
         boolean expResult = true;
         boolean result = instance.onTopEdge();
         assertEquals(expResult, result);
@@ -133,7 +133,7 @@ public class VPETest {
     public void testOnTopEdge2() {
         System.out.println("onTopEdge2");
         VPEArray vpea = new VPEArray(5,10);
-        VPE instance = new VPE(vpea,3,2);
+        VPE instance = new VPE(vpea,3,2,0);
         boolean expResult = false;
         boolean result = instance.onTopEdge();
         assertEquals(expResult, result);
@@ -149,7 +149,7 @@ public class VPETest {
     public void testOnBottomEdge() {
         System.out.println("onBottomEdge");
         VPEArray vpea = new VPEArray(5,10);
-        VPE instance = new VPE(vpea,3,9);
+        VPE instance = new VPE(vpea,3,9,0);
         boolean expResult = true;
         boolean result = instance.onBottomEdge();
         assertEquals(expResult, result);
@@ -164,7 +164,7 @@ public class VPETest {
     public void testOnBottomEdge2() {
         System.out.println("onBottomEdge2");
         VPEArray vpea = new VPEArray(5,10);
-        VPE instance = new VPE(vpea,3,7);
+        VPE instance = new VPE(vpea,3,7,0);
         boolean expResult = false;
         boolean result = instance.onBottomEdge();
         assertEquals(expResult, result);
@@ -185,7 +185,7 @@ public class VPETest {
         VPE[][] temp = new VPE[10][5];
         for(int j=0; j < 10; j++){
            for(int i = 0; i < 5; i++){
-               temp[j][i]=new VPE(vpea,i,j);
+               temp[j][i]=new VPE(vpea,i,j,0);
                vpea.insertVPE(temp[j][i]);
            }
         }
@@ -207,7 +207,7 @@ public class VPETest {
         VPE[][] temp = new VPE[10][5];
         for(int j=0; j < 10; j++){
            for(int i = 0; i < 5; i++){
-               temp[j][i]=new VPE(vpea,i,j);
+               temp[j][i]=new VPE(vpea,i,j,0);
                vpea.insertVPE(temp[j][i]);
            }
         }
@@ -229,7 +229,7 @@ public class VPETest {
         VPE[][] temp = new VPE[10][5];
         for(int j=0; j < 10; j++){
            for(int i = 0; i < 5; i++){
-               temp[j][i]=new VPE(vpea,i,j);
+               temp[j][i]=new VPE(vpea,i,j,0);
                vpea.insertVPE(temp[j][i]);
            }
         }
@@ -251,7 +251,7 @@ public class VPETest {
         VPE[][] temp = new VPE[10][5];
         for(int j=0; j < 10; j++){
            for(int i = 0; i < 5; i++){
-               temp[j][i]=new VPE(vpea,i,j);
+               temp[j][i]=new VPE(vpea,i,j,0);
                vpea.insertVPE(temp[j][i]);
            }
         }
@@ -273,7 +273,7 @@ public class VPETest {
         VPE[][] temp = new VPE[10][5];
         for(int j=0; j < 10; j++){
            for(int i = 0; i < 5; i++){
-               temp[j][i]=new VPE(vpea,i,j);
+               temp[j][i]=new VPE(vpea,i,j,0);
                vpea.insertVPE(temp[j][i]);
            }
         }
@@ -295,7 +295,7 @@ public class VPETest {
         VPE[][] temp = new VPE[10][5];
         for(int j=0; j < 10; j++){
            for(int i = 0; i < 5; i++){
-               temp[j][i]=new VPE(vpea,i,j);
+               temp[j][i]=new VPE(vpea,i,j,0);
                vpea.insertVPE(temp[j][i]);
            }
         }
@@ -317,7 +317,7 @@ public class VPETest {
         VPE[][] temp = new VPE[10][5];
         for(int j=0; j < 10; j++){
            for(int i = 0; i < 5; i++){
-               temp[j][i]=new VPE(vpea,i,j);
+               temp[j][i]=new VPE(vpea,i,j,0);
                vpea.insertVPE(temp[j][i]);
            }
         }
@@ -339,7 +339,7 @@ public class VPETest {
         VPE[][] temp = new VPE[10][5];
         for(int j=0; j < 10; j++){
            for(int i = 0; i < 5; i++){
-               temp[j][i]=new VPE(vpea,i,j);
+               temp[j][i]=new VPE(vpea,i,j,0);
                vpea.insertVPE(temp[j][i]);
            }
         }
@@ -373,7 +373,7 @@ public class VPETest {
         VPE[][] temp = new VPE[10][5];
         for(int j=0; j < 10; j++){
            for(int i = 0; i < 5; i++){
-               temp[j][i]=new VPE(vpea,i,j);
+               temp[j][i]=new VPE(vpea,i,j,0);
                vpea.insertVPE(temp[j][i]);
            }
         }
@@ -395,7 +395,7 @@ public class VPETest {
         VPE[][] temp = new VPE[10][5];
         for(int j=0; j < 10; j++){
            for(int i = 0; i < 5; i++){
-               temp[j][i]=new VPE(vpea,i,j);
+               temp[j][i]=new VPE(vpea,i,j,0);
                vpea.insertVPE(temp[j][i]);
            }
         }
@@ -416,7 +416,7 @@ public class VPETest {
         VPE[][] temp = new VPE[10][5];
         for(int j=0; j < 10; j++){
            for(int i = 0; i < 5; i++){
-               temp[j][i]=new VPE(vpea,i,j);
+               temp[j][i]=new VPE(vpea,i,j,0);
                vpea.insertVPE(temp[j][i]);
            }
         }
@@ -438,7 +438,7 @@ public class VPETest {
         VPE[][] temp = new VPE[10][5];
         for(int j=0; j < 10; j++){
            for(int i = 0; i < 5; i++){
-               temp[j][i]=new VPE(vpea,i,j);
+               temp[j][i]=new VPE(vpea,i,j,0);
                vpea.insertVPE(temp[j][i]);
            }
         }
@@ -459,7 +459,7 @@ public class VPETest {
         VPE[][] temp = new VPE[10][5];
         for(int j=0; j < 10; j++){
            for(int i = 0; i < 5; i++){
-               temp[j][i]=new VPE(vpea,i,j);
+               temp[j][i]=new VPE(vpea,i,j,0);
                vpea.insertVPE(temp[j][i]);
            }
         }
@@ -481,7 +481,7 @@ public class VPETest {
         VPE[][] temp = new VPE[10][5];
         for(int j=0; j < 10; j++){
            for(int i = 0; i < 5; i++){
-               temp[j][i]=new VPE(vpea,i,j);
+               temp[j][i]=new VPE(vpea,i,j,0);
                vpea.insertVPE(temp[j][i]);
            }
         }
@@ -502,7 +502,7 @@ public class VPETest {
         VPE[][] temp = new VPE[10][5];
         for(int j=0; j < 10; j++){
            for(int i = 0; i < 5; i++){
-               temp[j][i]=new VPE(vpea,i,j);
+               temp[j][i]=new VPE(vpea,i,j,0);
                vpea.insertVPE(temp[j][i]);
            }
         }
@@ -523,11 +523,11 @@ public class VPETest {
         VPE[][] temp = new VPE[10][5];
         for(int j=0; j < 10; j++){
            for(int i = 0; i < 5; i++){
-               temp[j][i]=new VPE(vpea,i,j);
+               temp[j][i]=new VPE(vpea,i,j,0);
                vpea.insertVPE(temp[j][i]);
            }
         }
-        VPE instance = new VPE(vpea,1,9);
+        VPE instance = new VPE(vpea,1,9,0);
         VPE expResult = null;
         VPE result = instance.getSouthNeighbor();
         assertEquals(expResult, result);
