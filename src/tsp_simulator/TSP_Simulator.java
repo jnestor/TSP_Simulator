@@ -18,13 +18,13 @@ public class TSP_Simulator {
      */
     public static void main(String[] args) {
         TSP_Simulator tsp = new TSP_Simulator();
-        VPEArray vpea = new VPEArray(5, 10);
+        VPEArray vpea = new VPEArray(10, 15);
         tsp.initialize(vpea);
-        for(int i = 0; i < 5; i++){            
+        for(int i = 0; i < 10; i++){            
             tsp.simulate(vpea); 
-            for (int j = 0; j < 10; j++) {
+            for (int j = 0; j < 15; j++) {
                 System.out.println();
-                for (int k = 0; k < 5; k++) {
+                for (int k = 0; k < 10; k++) {
                     System.out.print(" " + vpea.getVPE(k, j).getState());
                 }
             }
@@ -50,8 +50,7 @@ public class TSP_Simulator {
                 }
             } else if (vpe_process.getState() == 1) {
                 int neighbor_num = getNeighbors(vpe_process);
-                if (neighbor_num == 2 || neighbor_num == 3) {
-                } else {
+                if (neighbor_num < 2 || neighbor_num > 3) {
                     vpe_process.setNext(0);
                     update.add(vpe_process);
                 }
@@ -65,17 +64,16 @@ public class TSP_Simulator {
         Random rand2 = new Random();
         int x;
         int y;
-        for (int i = 0; i < 5; i++) {
+        for (int i = 0; i < 15; i++) {
             x = rand1.nextInt(3 * vpea.getWidth() / 4 - vpea.getWidth() / 4) + vpea.getWidth() / 4;
             y = rand2.nextInt(3 * vpea.getHeight() / 4 - vpea.getHeight() / 4) + vpea.getHeight() / 4;
             System.out.println("x" + x + "y" + y);
             VPE temp = new VPE(vpea, x, y, 1);
-            vpea.insertVPE(temp);
-            eval.add(temp);
+            if(testExist(temp))   vpea.insertVPE(temp);  
         }
-        for (int j = 0; j < 10; j++) {
+        for (int j = 0; j < 15; j++) {
             System.out.println();
-            for (int i = 0; i < 5; i++) {
+            for (int i = 0; i < 10; i++) {
                 if (vpea.getVPE(i, j) == null) {
                     VPE temp = new VPE(vpea, i, j, 0);
                     vpea.insertVPE(temp);
@@ -96,37 +94,23 @@ public class TSP_Simulator {
         VPE southwest = vpe_process.getSouthWestNeighbor();
         VPE southeast = vpe_process.getSouthEastNeighbor();
         int survive = 0;
-        if (east != null && east.getState() == 1) {
-            survive++;
-        }
+        if (east != null && east.getState() == 1) survive++;
+            //System.out.println("test survive east" +vpe_process.getX()+" "+vpe_process.getY()+" "+ survive);
+        if (west != null && west.getState() == 1) survive++;
+            //System.out.println("test survive west" +vpe_process.getX()+" "+vpe_process.getY()+" "+ survive);
+        if (north != null && north.getState() == 1) survive++;
+            //System.out.println("test survive north" +vpe_process.getX()+" "+vpe_process.getY()+" "+survive);
+        if (south != null && south.getState() == 1) survive++;
+            //System.out.println("test survive south" +vpe_process.getX()+" "+vpe_process.getY()+" "+ survive);
+        if (northeast != null && northeast.getState() == 1) survive++;
+            //System.out.println("test survive northeast" +vpe_process.getX()+" "+vpe_process.getY()+" "+ survive);
+        if (northwest != null && northwest.getState() == 1) survive++;
+            //System.out.println("test survive northwest" +vpe_process.getX()+" "+vpe_process.getY()+" "+ survive);
+        if (southeast != null && southeast.getState() == 1) survive++;
+            //System.out.println("test survive southeast" +vpe_process.getX()+" "+vpe_process.getY()+" "+ survive);
+        if (southwest != null && southwest.getState() == 1) survive++;
+            //System.out.println("test survive southwest" +vpe_process.getX()+" "+vpe_process.getY()+" "+ survive);
 
-        if (west != null && west.getState() == 1) {
-            survive++;
-        }
-
-        if (north != null && north.getState() == 1) {
-            survive++;
-        }
-
-        if (south != null && south.getState() == 1) {
-            survive++;
-        }
-
-        if (northeast != null && northeast.getState() == 1) {
-            survive++;
-        }
-
-        if (northwest != null && northwest.getState() == 1) {
-            survive++;
-        }
-
-        if (southeast != null && southeast.getState() == 1) {
-            survive++;
-        }
-
-        if (southwest != null && southwest.getState() == 1) {
-            survive++;
-        }
         return survive;
     }
 

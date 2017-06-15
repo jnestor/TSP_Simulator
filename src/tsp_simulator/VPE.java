@@ -86,12 +86,12 @@ public class VPE {
     
     public VPE getNorthEastNeighbor(){
         if (onTopEdge()||onRightEdge()) return null;
-        else return vpa.getVPE(xPos-1, yPos+1);
+        else return vpa.getVPE(xPos+1, yPos-1);
     }
     
     public VPE getSouthWestNeighbor(){
         if(onBottomEdge()||onLeftEdge()) return null;
-        else return vpa.getVPE(xPos+1, yPos-1);
+        else return vpa.getVPE(xPos-1, yPos+1);
     }
     
     public VPE getSouthEastNeighbor(){
