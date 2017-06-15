@@ -35,8 +35,7 @@ public class VPE {
         state = next;
         next = 0;
         System.out.println(state +" state");
-        if(state == 1)  return true;
-        else            return false;
+        return state == 1;
     }
     
     public boolean onLeftEdge() {
