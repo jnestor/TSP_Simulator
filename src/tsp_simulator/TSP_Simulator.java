@@ -18,14 +18,14 @@ public class TSP_Simulator {
      */
     public static void main(String[] args) {
         TSP_Simulator tsp = new TSP_Simulator();
-        VPEArray vpea = new VPEArray(5, 10);
+        VPEArray vpea = new VPEArray(10, 15);
         tsp.initialize(vpea);
         //repeat the simulation process for 10 times
         for(int i = 0; i < 10; i++){            
             tsp.simulate(vpea); 
-            for (int j = 0; j < 10; j++) {
+            for (int j = 0; j < 15; j++) {
                 System.out.println();
-                for (int k = 0; k < 5; k++) {
+                for (int k = 0; k < 10; k++) {
                     System.out.print(" " + vpea.getVPE(k, j).getState());
                 }
             }
@@ -68,16 +68,16 @@ public class TSP_Simulator {
         Random rand2 = new Random();
         int x;
         int y;
-        for (int i = 0; i < 5; i++) {
+        for (int i = 0; i < 10; i++) {
             x = rand1.nextInt(3 * vpea.getWidth() / 4 - vpea.getWidth() / 4) + vpea.getWidth() / 4;
             y = rand2.nextInt(3 * vpea.getHeight() / 4 - vpea.getHeight() / 4) + vpea.getHeight() / 4;
             System.out.println("x" + x + "y" + y);
             VPE temp = new VPE(vpea, x, y, 1);
             if(firstinitialize(temp))   vpea.insertVPE(temp);  
         }
-        for (int j = 0; j < 10; j++) {
+        for (int j = 0; j < 15; j++) {
             System.out.println();
-            for (int i = 0; i < 5; i++) {
+            for (int i = 0; i < 10; i++) {
                 if (vpea.getVPE(i, j) == null) {
                     VPE temp = new VPE(vpea, i, j, 0);
                     vpea.insertVPE(temp);
@@ -116,7 +116,7 @@ public class TSP_Simulator {
           // System.out.println("test survive southwest" +vpe_process.getX()+" "+vpe_process.getY()+" "+ survive);}
         return survive;
     }
-
+//add neighbors in the eval list 
     public void getEvalList(VPE vpe_process) {
         VPE east1 = vpe_process.getEastNeighbor();
         VPE west1 = vpe_process.getWestNeighbor();
@@ -135,6 +135,7 @@ public class TSP_Simulator {
         testExist(southeast1);
         testExist(southwest1);                
     }
+    
 //test whether the VPEs already in the eval list, used to delete duplicate neighbors
     public boolean testExist(VPE vpe_test) {
         if (vpe_test != null) {
