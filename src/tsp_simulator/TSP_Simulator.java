@@ -17,20 +17,20 @@ public class TSP_Simulator {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        TSP_Simulator tsp = new TSP_Simulator();
-        VPEArray vpea = new VPEArray(10, 15);
-        tsp.initialize(vpea);
-        //repeat the simulation process for 10 times
-        for(int i = 0; i < 10; i++){            
-            tsp.simulate(vpea); 
-            for (int j = 0; j < 15; j++) {
-                System.out.println();
-                for (int k = 0; k < 10; k++) {
-                    System.out.print(" " + vpea.getVPE(k, j).getState());
-                }
-            }
-            System.out.println();
-        }  
+//        TSP_Simulator tsp = new TSP_Simulator();
+//        vpea = new VPEArray(16, 16);
+//        tsp.initialize(vpea);
+//        //repeat the simulation process for 10 times
+//        for(int i = 0; i < 10; i++){            
+//            tsp.simulate(vpea); 
+//            for (int j = 0; j < 16; j++) {
+//                System.out.println();
+//                for (int k = 0; k < 16; k++) {
+//                    System.out.print(" " + vpea.getVPE(k, j).getState());
+//                }
+//            }
+//            System.out.println();
+//        }  
     }
 
     public TSP_Simulator(){
@@ -75,9 +75,9 @@ public class TSP_Simulator {
             VPE temp = new VPE(vpea, x, y, 1);
             if(firstinitialize(temp))   vpea.insertVPE(temp);  
         }
-        for (int j = 0; j < 15; j++) {
+        for (int j = 0; j < 16; j++) {
             System.out.println();
-            for (int i = 0; i < 10; i++) {
+            for (int i = 0; i < 16; i++) {
                 if (vpea.getVPE(i, j) == null) {
                     VPE temp = new VPE(vpea, i, j, 0);
                     vpea.insertVPE(temp);
@@ -174,7 +174,21 @@ public class TSP_Simulator {
         stay.clear();
     }
     
+    public void selectPATTERN(String selection){
+        switch(selection){
+            case "Glider":
+            case "Boat":
+            case "Spaceship":
+            case "Blinker":
+            case "Choose a pattern":
+            default: 
+        }
+    }
+    
+    
+
     private LinkedList<VPE> eval;
     private LinkedList<VPE> update;
     private LinkedList<VPE> stay;
+    private String PATTERN;
 }
